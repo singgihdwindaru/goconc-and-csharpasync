@@ -1,0 +1,8 @@
+dotnet new sln -o async-await
+cd async-await
+dotnet new classlib -o TargetService
+dotnet sln add ./TargetService/TargetService.csproj
+dotnet new xunit -o TargetService.Tests
+dotnet sln add ./TargetService.Tests/TargetService.Tests.csproj
+dotnet add ./TargetService.Tests/TargetService.Tests.csproj reference ./TargetService/TargetService.csproj  
+
